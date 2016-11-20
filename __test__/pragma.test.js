@@ -9,4 +9,14 @@ describe('pragma', () => {
   it('should handle null as attribute parameter', () => {
     expect(() => h('section', null)).not.toThrow();
   });
+
+  it('should render functional components into string', () => {
+    function Test() {
+      return '';
+    }
+
+    const result = <Test />;
+
+    expect(typeof result).toBe('string');
+  });
 });
