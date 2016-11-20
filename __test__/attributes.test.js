@@ -11,6 +11,10 @@ describe('attributes', () => {
     it('should pass thorugh proper value', () => {
       expect(<section align="r" />).toMatchSnapshot();
     });
+
+    it('should omit invalid value', () => {
+      expect(<section align="right" />).toMatchSnapshot();
+    });
   });
 
   describe('colors', () => {

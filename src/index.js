@@ -1,5 +1,6 @@
 import {
   validateColor,
+  validateAlignment,
 } from './validate';
 
 const tags = {
@@ -14,7 +15,7 @@ const tags = {
 };
 
 const attributesValue = {
-  align: value => value,
+  align: value => (validateAlignment(value) ? value : null),
   background: value => (validateColor(value) ? `B${value}` : null),
   foreground: value => (validateColor(value) ? `F${value}` : null),
 };

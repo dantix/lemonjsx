@@ -1,3 +1,5 @@
+exports[`attributes alignment should omit invalid value 1`] = `""`;
+
 exports[`attributes alignment should pass thorugh proper value 1`] = `"%{r}"`;
 
 exports[`attributes colors should omit invalid color value 1`] = `""`;
