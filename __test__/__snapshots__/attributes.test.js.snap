@@ -10,4 +10,12 @@ exports[`attributes colors should pass thorugh #rgb value 1`] = `"%{B#fff F#fff 
 
 exports[`attributes colors should pass thorugh #rrggbb value 1`] = `"%{B#ffffff F#ffffff U#Ff3acb}"`;
 
+exports[`attributes font should omit invalid value 1`] = `""`;
+
+exports[`attributes font should omit invalid value 2`] = `""`;
+
+exports[`attributes font should pass through proper value 1`] = `"%{T1}"`;
+
+exports[`attributes font should pass through proper value 2`] = `"%{T3}"`;
+
 exports[`attributes general should not create section with empty attributes 1`] = `""`;

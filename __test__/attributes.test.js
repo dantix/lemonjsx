@@ -66,4 +66,22 @@ describe('attributes', () => {
       expect(section).toMatchSnapshot();
     });
   });
+
+  describe('font', () => {
+    it('should pass through proper value', () => {
+      expect(<section font={1} />).toMatchSnapshot();
+    });
+
+    it('should pass through proper value', () => {
+      expect(<section font="3" />).toMatchSnapshot();
+    });
+
+    it('should omit invalid value', () => {
+      expect(<section font="Ubuntu" />).toMatchSnapshot();
+    });
+
+    it('should omit invalid value', () => {
+      expect(<section font={6} />).toMatchSnapshot();
+    });
+  });
 });
