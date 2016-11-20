@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "test": "jest"
+    "test": "jest --config jestrc.json"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.18.0"
+    "babel-preset-es2015": "^6.18.0",
+    "jest-cli": "^17.0.3"
   }
 }
