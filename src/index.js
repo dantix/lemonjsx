@@ -1,3 +1,5 @@
+import warning from 'warning';
+
 import {
   validateColor,
   validateAlignment,
@@ -9,10 +11,19 @@ const tags = {
   section: {
     open: '',
     close: '',
+    availableAttrs: [
+      'align',
+      'foreground',
+      'background',
+      'underline',
+      'offset',
+      'font',
+    ],
   },
   bar: {
     open: '',
     close: '\n',
+    availableAttrs: [],
   },
 };
 
@@ -25,11 +36,27 @@ const attributesValue = {
   offset: value => (validateOffset(value) ? `O${value}` : null),
 };
 
-function attributes(attrs) {
+function getAttributeValueForTag(available) {
+  return function getAttributeValue(attribute, input) {
+    const converter = attributesValue[attribute];
+    if (!converter) {
+      return warning(converter, `This attribute - ${attribute} is not supported`);
+    }
+
+    const canBeUsed = available.includes(attribute);
+    if (!canBeUsed) {
+      return warning(canBeUsed, `This attribute - ${attribute} is not available for this tag`);
+    }
+
+    return converter(input);
+  };
+}
+
+function attributes(attrs, getAttributeValue) {
   if (!attrs) { return ''; }
 
   const result = Object.entries(attrs)
-    .map(([key, value]) => attributesValue[key](value))
+    .map(([key, value]) => getAttributeValue(key, value))
     .filter(v => v)
     .join(' ');
 
@@ -42,7 +69,8 @@ export default function f(element, attrs, ...children) {
   }
 
   const tag = tags[element];
-  const attrsValue = attributes(attrs);
+  const getAttributeValue = getAttributeValueForTag(tag.availableAttrs);
+  const attrsValue = attributes(attrs, getAttributeValue);
   const childrenValue = children.join('');
 
   return `${tag.open}${attrsValue}${childrenValue}${tag.close}`;

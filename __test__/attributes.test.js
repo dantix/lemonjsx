@@ -5,6 +5,14 @@ describe('attributes', () => {
     it('should not create section with empty attributes', () => {
       expect(<section />).toMatchSnapshot();
     });
+
+    it('should omit unsupported attributes', () => {
+      expect(<section wrong="value" />).toMatchSnapshot();
+    });
+
+    it('should omit unsupported attributes', () => {
+      expect(<bar background="value" />).toMatchSnapshot();
+    });
   });
 
   describe('alignment', () => {
