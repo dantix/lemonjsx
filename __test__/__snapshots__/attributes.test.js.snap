@@ -1,0 +1,7 @@
+exports[`attributes alignment should pass thorugh proper value 1`] = `"%{r}"`;
+
+exports[`attributes colors should pass thorugh #aarrggbb value 1`] = `"%{B#ffffffff F#ffffffff}"`;
+
+exports[`attributes colors should pass thorugh #rgb value 1`] = `"%{B#fff F#fff}"`;
+
+exports[`attributes colors should pass thorugh #rrggbb value 1`] = `"%{B#ffffff F#ffffff}"`;
