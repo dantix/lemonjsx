@@ -1,3 +1,5 @@
+import warning from 'warning';
+
 const tags = {
   section: {
     open: '',
@@ -9,10 +11,17 @@ const tags = {
   },
 };
 
+function checkColor(color) {
+  const result = /^#(([0-9a-f]){8})$|^#(([0-9a-f]){3}){1,2}$/i.test(color);
+  warning(result, `Passed color - ${color} has a wrong format - use '#rgb', '#rrggbb' or '#aarrggbb'`);
+
+  return result;
+}
+
 const attributesValue = {
   align: value => value,
-  background: value => `B${value}`,
-  foreground: value => `F${value}`,
+  background: value => (checkColor(value) ? `B${value}` : null),
+  foreground: value => (checkColor(value) ? `F${value}` : null),
 };
 
 function attributes(attrs) {
@@ -20,9 +29,10 @@ function attributes(attrs) {
 
   const result = Object.entries(attrs)
     .map(([key, value]) => attributesValue[key](value))
+    .filter(v => v)
     .join(' ');
 
-  return `%{${result}}`;
+  return result ? `%{${result}}` : '';
 }
 
 export default function f(element, attrs, ...children) {
