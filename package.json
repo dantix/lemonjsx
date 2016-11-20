@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "test": "jest --config jestrc.json"
+    "test": "jest --config jestrc.json --coverage"
   },
   "repository": {
     "type": "git",
