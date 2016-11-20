@@ -7,6 +7,13 @@ export function validateAlignment(align) {
   return result;
 }
 
+export function validateOffset(input) {
+  const result = +input === +input && +input > 0;
+  warning(result, `Passed offset - ${input} has a wrong value. It should be a number and greater than 0`);
+
+  return result;
+}
+
 export function validateFont(font) {
   const number = +font;
 

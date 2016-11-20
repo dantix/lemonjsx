@@ -19,3 +19,9 @@ exports[`attributes font should pass through proper value 1`] = `"%{T1}"`;
 exports[`attributes font should pass through proper value 2`] = `"%{T3}"`;
 
 exports[`attributes general should not create section with empty attributes 1`] = `""`;
+
+exports[`attributes offset should omit invalid value 1`] = `""`;
+
+exports[`attributes offset should omit invalid value 2`] = `""`;
+
+exports[`attributes offset should pass through proper value 1`] = `"%{O150}"`;

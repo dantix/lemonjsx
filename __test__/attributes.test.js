@@ -84,4 +84,18 @@ describe('attributes', () => {
       expect(<section font={6} />).toMatchSnapshot();
     });
   });
+
+  describe('offset', () => {
+    it('should pass through proper value', () => {
+      expect(<section offset={150} />).toMatchSnapshot();
+    });
+
+    it('should omit invalid value', () => {
+      expect(<section offset={-100} />).toMatchSnapshot();
+    });
+
+    it('should omit invalid value', () => {
+      expect(<section offset="some gibberish" />).toMatchSnapshot();
+    });
+  });
 });
