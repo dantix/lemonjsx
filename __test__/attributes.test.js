@@ -23,6 +23,7 @@ describe('attributes', () => {
         <section
           background="#fff"
           foreground="#fff"
+          underline="#000"
         />
       );
 
@@ -34,6 +35,7 @@ describe('attributes', () => {
         <section
           background="#ffffff"
           foreground="#ffffff"
+          underline="#Ff3acb"
         />
       );
 
@@ -45,6 +47,7 @@ describe('attributes', () => {
         <section
           background="#ffffffff"
           foreground="#ffffffff"
+          underline="#AbCdeF12"
         />
       );
 
@@ -56,6 +59,7 @@ describe('attributes', () => {
         <section
           background="#1234f"
           foreground="#badcolor"
+          underline="#wrongcolor"
         />
       );
 

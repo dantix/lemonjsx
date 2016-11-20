@@ -4,10 +4,10 @@ exports[`attributes alignment should pass thorugh proper value 1`] = `"%{r}"`;
 
 exports[`attributes colors should omit invalid color value 1`] = `""`;
 
-exports[`attributes colors should pass thorugh #aarrggbb value 1`] = `"%{B#ffffffff F#ffffffff}"`;
+exports[`attributes colors should pass thorugh #aarrggbb value 1`] = `"%{B#ffffffff F#ffffffff U#AbCdeF12}"`;
 
-exports[`attributes colors should pass thorugh #rgb value 1`] = `"%{B#fff F#fff}"`;
+exports[`attributes colors should pass thorugh #rgb value 1`] = `"%{B#fff F#fff U#000}"`;
 
-exports[`attributes colors should pass thorugh #rrggbb value 1`] = `"%{B#ffffff F#ffffff}"`;
+exports[`attributes colors should pass thorugh #rrggbb value 1`] = `"%{B#ffffff F#ffffff U#Ff3acb}"`;
 
 exports[`attributes general should not create section with empty attributes 1`] = `""`;

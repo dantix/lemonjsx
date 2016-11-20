@@ -18,6 +18,7 @@ const attributesValue = {
   align: value => (validateAlignment(value) ? value : null),
   background: value => (validateColor(value) ? `B${value}` : null),
   foreground: value => (validateColor(value) ? `F${value}` : null),
+  underline: value => (validateColor(value) ? `U${value}` : null),
 };
 
 function attributes(attrs) {
