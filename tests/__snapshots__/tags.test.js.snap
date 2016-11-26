@@ -6,3 +6,5 @@ exports[`tags attributes should omit unsupported attributes 2`] = `
 `;
 
 exports[`tags general should omit unknown tags 1`] = `""`;
+
+exports[`tags reverse colors should be rendered properly 1`] = `"%{F#fff B#000}before content%{R}reversed content%{R}after content"`;

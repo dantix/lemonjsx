@@ -25,6 +25,11 @@ const tags = {
     close: '\n',
     availableAttrs: [],
   },
+  'reverse-colors': {
+    open: '%{R}',
+    close: '%{R}',
+    availableAttrs: [],
+  },
 };
 
 const attributesValue = {

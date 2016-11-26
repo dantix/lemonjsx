@@ -25,4 +25,18 @@ describe('tags', () => {
       expect(<bar background="value" />).toMatchSnapshot();
     });
   });
+
+  describe('reverse colors', () => {
+    it('should be rendered properly', () => {
+      expect((
+        <section foreground="#fff" background="#000">
+          before content
+          <reverse-colors>
+            reversed content
+          </reverse-colors>
+          after content
+        </section>
+      )).toMatchSnapshot();
+    });
+  });
 });
