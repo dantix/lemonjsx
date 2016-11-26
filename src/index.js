@@ -25,6 +25,11 @@ const tags = {
     close: '\n',
     availableAttrs: [],
   },
+  'reverse-colors': {
+    open: '%{R}',
+    close: '%{R}',
+    availableAttrs: [],
+  },
 };
 
 const attributesValue = {
@@ -69,6 +74,9 @@ export default function f(element, attrs, ...children) {
   }
 
   const tag = tags[element];
+
+  if (!tag) return '';
+
   const getAttributeValue = getAttributeValueForTag(tag.availableAttrs);
   const attrsValue = attributes(attrs, getAttributeValue);
   const childrenValue = children.join('');
