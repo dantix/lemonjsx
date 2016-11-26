@@ -1,0 +1,6 @@
+exports[`tags attributes should omit unsupported attributes 1`] = `""`;
+
+exports[`tags attributes should omit unsupported attributes 2`] = `
+"
+"
+`;
